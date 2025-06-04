@@ -1,47 +1,33 @@
-import type { Metadata } from 'next';
-import type { ChamberData } from '@/types/game';
-import { chambers } from '@/data/chambers';
-import ChamberClient from '@/components/ChamberClient';
+// src/app/chamber/[id]/page.tsx
 
-type ChamberPageProps = {
-  params: { id: string }; // Next.js dynamic route params
+import { chambers } from '@/data/chambers';
+import { notFound } from 'next/navigation';
+import ChamberClientWrapper from '@/components/ChamberClientWrapper';
+
+type PageProps = {
+  params: { id: string };
 };
 
 /**
- * Server component to fetch chamber data by ID.
- * If chamber not found, renders a friendly message.
- * Otherwise, renders ChamberClient client component with props.
+ * Server Component representing the Chamber page.
+ *
+ * - Receives chamber ID from URL params.
+ * - Checks if the chamber exists.
+ * - If not found, triggers a 404 page.
+ * - Otherwise, renders the client-side ChamberClientWrapper,
+ *   passing the chamber ID for client interactions.
  */
-export default function ChamberPage({ params }: ChamberPageProps) {
+export default function ChamberPage({ params }: PageProps) {
   const chamberId = Number(params.id);
 
-  // Find chamber by id from data
+  // Find the chamber by ID
   const chamber = chambers.find((c) => c.id === chamberId);
 
+  // If the chamber doesn't exist, render 404 page
   if (!chamber) {
-    return (
-      <main className="min-h-screen flex items-center justify-center bg-gray-900 text-white text-xl p-4">
-        <p>Chamber not found.</p>
-      </main>
-    );
+    notFound();
   }
 
-  return (
-    <main className="min-h-screen p-6 bg-gray-900 text-white flex flex-col items-center">
-      <h2 className="mb-6 text-3xl font-semibold">{chamber.name}</h2>
-      <ChamberClient
-        chamberId={chamber.id}
-        entities={chamber.entities}
-        playerStart={chamber.playerStart}
-      />
-    </main>
-  );
+  // Render client component wrapper with chamberId prop
+  return <ChamberClientWrapper chamberId={chamberId} />;
 }
-
-/**
- * Optional: You can export metadata per page for SEO
- */
-export const metadata: Metadata = {
-  title: 'Chamber',
-  description: 'Explore the Mind Palace chamber',
-};

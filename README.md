@@ -1,39 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chambers of the Mind
 
-## Getting Started
+Welcome to the early gates of **Chambers of the Mind** — a surreal psychological narrative game set inside a symbolic Mind Palace. Here, you explore chambers filled with enigmatic characters, symbolic items, and moral puzzles.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## What’s here so far?
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- A mysterious 7-chamber world laid out on a grid.
+- Move your glowing player tile step-by-step.
+- Meet manipulators and helpers through poetic dialogue.
+- Unlock doors leading to non-linear emotional journeys.
+- Experience the first taste of the Mirror Room’s reflection.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## What’s next on the horizon?
 
-## Learn More
+✨ **Expanding the Mind Palace:** More chambers, deeper stories, and evolving characters.
 
-To learn more about Next.js, take a look at the following resources:
+🗝️ **Meaningful choices:** Your interactions will shape the narrative, trust, and manipulation you encounter.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🧩 **Symbolic Items & Mysteries:** Use, give, and uncover the power behind symbolic objects.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🎭 **Dynamic Characters:** Helpers and manipulators will grow, change, and move with you.
 
-## Deploy on Vercel
+📓 **Journaling & Reflections:** Track your path, missed clues, and inner thoughts.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🌦️ **Ambient Atmosphere:** Flickering tiles, symbolic weather, and ambient effects to enrich immersion.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## How we plan to update
+
+This project lives on GitHub and Vercel — we push new mysteries and features steadily, exploring the depths of the mind palace one commit at a time. We encourage community feedback, creative ideas, and symbolic interpretations to guide our path forward.
+
+---
+
+Stay curious, keep exploring, and remember — not everything is as it seems inside the chambers.
+
+— The Mind Palace Team
 
 
-can you give me a fully updated and notated page.tsx

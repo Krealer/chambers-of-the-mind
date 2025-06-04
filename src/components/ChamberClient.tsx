@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { chambers } from '@/data/chambers';
 import Grid from '@/components/grid/Grid';
 
@@ -18,7 +18,6 @@ type ChamberClientProps = {
 
 export default function ChamberClient({ chamberId }: ChamberClientProps) {
   const router = useRouter();
-  const pathname = usePathname();
 
   // State: currently selected chamber ID
   const [currentChamberId, setCurrentChamberId] = useState(chamberId);
