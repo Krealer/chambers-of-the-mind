@@ -39,5 +39,3 @@ This project lives on GitHub and Vercel — we push new mysteries and features s
 Stay curious, keep exploring, and remember — not everything is as it seems inside the chambers.
 
 — The Mind Palace Team
-
-
