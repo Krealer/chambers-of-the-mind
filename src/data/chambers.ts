@@ -1,0 +1,65 @@
+// src/data/chambers.ts
+
+import type { ChamberData } from '@/types/game';
+
+/**
+ * Chambers array holds the definitions for all 7 chambers in the Mind Palace.
+ * Each chamber has:
+ * - id: unique numeric identifier (0 to 6)
+ * - name: human-readable chamber name for UI and debugging
+ * - playerStart: initial [row, col] position where the player spawns in this chamber
+ * - entities: array of all characters, doors, and items placed on the chamber grid
+ */
+export const chambers: ChamberData[] = [
+  {
+    id: 0,
+    name: 'Antechamber',
+    playerStart: [5, 5],
+    entities: [
+      {
+        type: 'character',
+        name: 'The Flamebearer',
+        characterId: 'flamebearer',
+        position: [4, 12],
+        color: '#f97316', // Tailwind orange-500
+      },
+      {
+        type: 'door',
+        position: [9, 0],
+        leadsTo: { chamberId: 1, entryTile: [0, 17] },
+      },
+      {
+        type: 'door',
+        position: [0, 17],
+        leadsTo: { chamberId: 2, entryTile: [9, 0] },
+      },
+    ],
+  },
+
+  {
+    id: 1,
+    name: 'Chamber of Whispers',
+    playerStart: [0, 17],
+    entities: [
+      {
+        type: 'door',
+        position: [0, 17],
+        leadsTo: { chamberId: 0, entryTile: [9, 0] },
+      },
+      {
+        type: 'door',
+        position: [9, 0],
+        leadsTo: { chamberId: 3, entryTile: [0, 0] },
+      },
+      {
+        type: 'character',
+        name: 'The Whisperer',
+        characterId: 'whisperer',
+        position: [5, 9],
+        color: '#6366f1', // Tailwind indigo-500
+      },
+    ],
+  },
+
+  // Add other chambers (2 to 6) following the same structure...
+];

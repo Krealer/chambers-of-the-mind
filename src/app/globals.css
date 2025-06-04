@@ -1,10 +1,24 @@
 @import "tailwindcss";
 
+/* Root variables for light mode */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Add some accent colors for UI elements */
+  --accent-primary: #7c3aed; /* purple-700 from Tailwind */
+  --accent-secondary: #9333ea; /* purple-600 */
+
+  /* Base font sizes */
+  --font-base-size: 16px;
+  --font-heading-size: 2rem;
+
+  /* Font families */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
+/* Theme block for your design system */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -12,15 +26,71 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Dark mode overrides */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    /* Dark mode accent tweaks */
+    --accent-primary: #a78bfa; /* lighter purple */
+    --accent-secondary: #c084fc;
   }
 }
 
+/* Global styles */
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--font-base-size);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  color: var(--foreground);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.25;
+}
+
+/* Links */
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-secondary);
+  outline: none;
+}
+
+/* Button base styles */
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  background: var(--accent-primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+button:focus {
+  background: var(--accent-secondary);
+  outline: none;
+}
+
+/* Utility: smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
