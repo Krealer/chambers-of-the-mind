@@ -5,21 +5,21 @@ import { notFound } from 'next/navigation';
 import ChamberClientWrapper from '@/components/ChamberClientWrapper';
 
 type PageProps = {
-  // Next.js App Router now passes params as a Promise
-  params: Promise<{ id: string }>;
+  // Params object provided by the App Router
+  params: { id: string };
 };
 
 /**
  * Server Component for rendering a Chamber page.
  *
- * - Awaits the `params` Promise to get the chamber ID from the URL.
+ * - Reads the chamber ID from the URL params.
  * - Finds the corresponding chamber from the data.
  * - If not found, triggers Next.js 404 page.
  * - Renders the client-side ChamberClientWrapper with the chamberId prop.
  */
 export default async function ChamberPage({ params }: PageProps) {
-  // Await params Promise to get actual params object
-  const { id } = await params;
+  // Get chamber ID from the URL params
+  const { id } = params;
 
   // Parse chamber ID as number
   const chamberId = Number(id);
