@@ -3,7 +3,9 @@
 import type { ChamberData } from '@/types/game';
 
 /**
- * Chambers array holds the definitions for all 7 chambers in the Mind Palace.
+ * Chambers array holds the definitions for the chambers in the Mind Palace.
+ * Currently only the first two chambers are defined; additional chambers will be
+ * added in future updates.
  * Each chamber has:
  * - id: unique numeric identifier (0 to 6)
  * - name: human-readable chamber name for UI and debugging
@@ -61,5 +63,5 @@ export const chambers: ChamberData[] = [
     ],
   },
 
-  // Add other chambers (2 to 6) following the same structure...
+  // TODO: Add other chambers (2 to 6) following the same structure...
 ];
