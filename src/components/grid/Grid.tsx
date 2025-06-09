@@ -6,6 +6,7 @@ import Character from '../Character';
 import Player from '../Player';
 import Dialog from '@/components/ui/Dialog';
 import { dialogs } from '@/data/dialogs';
+import { isAdjacent } from '@/lib/isAdjacent';
 
 type Entity = {
   type: 'character' | 'item' | 'door';
@@ -53,16 +54,6 @@ type Node = {
   f: number;
   parent: Node | null;
 };
-
-/**
- * Check adjacency of two tiles (up/down/left/right)
- */
-export const isAdjacent = (
-  [r1, c1]: [number, number],
-  [r2, c2]: [number, number]
-) =>
-  (r1 === r2 && Math.abs(c1 - c2) === 1) ||
-  (c1 === c2 && Math.abs(r1 - r2) === 1);
 
 export default function Grid({
   entities,
