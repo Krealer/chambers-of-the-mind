@@ -4,7 +4,7 @@ import { chambers } from '@/data/chambers';
 import { notFound } from 'next/navigation';
 import ChamberClientWrapper from '@/components/ChamberClientWrapper';
 
-type PageProps = {
+type ChamberPageProps = {
   params: { id: string };
 };
 
@@ -16,7 +16,7 @@ type PageProps = {
  * - If not found, triggers Next.js 404 page.
  * - Renders the client-side ChamberClientWrapper with the chamberId prop.
  */
-export default function ChamberPage({ params }: PageProps) {
+export default function ChamberPage({ params }: ChamberPageProps) {
   const { id } = params;
 
   // Parse chamber ID as number
