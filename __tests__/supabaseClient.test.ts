@@ -25,4 +25,12 @@ describe('supabaseClient', () => {
     );
     expect(supabase).toEqual({ fake: true });
   });
+
+  test('throws when env vars are missing', () => {
+    delete process.env.NEXT_PUBLIC_SUPABASE_URL;
+    jest.resetModules();
+    expect(() => require('../src/lib/supabaseClient')).toThrow(
+      /Supabase environment variables missing/
+    );
+  });
 });
