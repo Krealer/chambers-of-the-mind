@@ -1,4 +1,4 @@
-import { isAdjacent } from '../src/components/grid/Grid';
+import { isAdjacent } from '../src/lib/isAdjacent';
 
 describe('isAdjacent', () => {
   test('returns true for horizontally adjacent tiles', () => {
