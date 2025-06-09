@@ -34,6 +34,16 @@ Welcome to the early gates of **Chambers of the Mind** — a surreal psychologic
 
 This project lives on GitHub and Vercel — we push new mysteries and features steadily, exploring the depths of the mind palace one commit at a time. We encourage community feedback, creative ideas, and symbolic interpretations to guide our path forward.
 
+## Running tests
+
+This project uses **Jest** for unit testing. After installing dependencies with `npm install`, run all tests with:
+
+```bash
+npm test
+```
+
+Jest will execute the tests found in the `__tests__` folder.
+
 ---
 
 Stay curious, keep exploring, and remember — not everything is as it seems inside the chambers.
